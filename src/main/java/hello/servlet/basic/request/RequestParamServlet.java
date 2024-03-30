@@ -22,13 +22,14 @@ public class RequestParamServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 전체 파라미터 조회
+        System.out.println("RequestParamServlet.service");
 
         request.getParameterNames().asIterator()
                 .forEachRemaining(paramName -> System.out.println("paramName = " + request.getParameter(paramName)));
 
 
-        /*String username = request.getParameter("username");
+        String username = request.getParameter("username");
         String age = request.getParameter("age");
-        System.out.println("username = " + username + "age = " + age);*/
+        System.out.println("username = " + username + "age = " + age);
     }
 }
